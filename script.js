@@ -148,7 +148,7 @@ const slides = [
     heading: 'Технологии<br>в реальном<br><span>мире</span>',
     description: 'Мы создаём электронные устройства, которые делают жизнь удобнее, умнее и технологичнее.',
     caption: 'ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ',
-    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/bmw-m5-f90-xdot.webp', alt: 'BMW M5 F90 с установленным xDot вместо эмблемы на крышке багажника',
+    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/bmw-m5-f90-xdot-v2.webp', alt: 'BMW M5 F90 с установленным xDot вместо эмблемы на крышке багажника',
   },
   {
     eyebrow: 'ДИЗАЙН ZOND LABS',
