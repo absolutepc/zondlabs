@@ -8,9 +8,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ZOND Labs — Технологии в реальном мире" />
   <meta property="og:description" content="Дизайн, инженерия и электронные продукты, созданные с вниманием к деталям." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/absolutepc/zondlabs/main/assets/share-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="color-scheme" content="dark light" />
   <title>ZOND Labs — Технологии в реальном мире</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" href="/assets/hero.webp" as="image" />
+  <link rel="preload" href="/assets/hero.webp" as="image" fetchpriority="high" />
   <link rel="stylesheet" href="/styles.css" />
   <script defer src="/script.js"></script>
 </head>
@@ -22,43 +27,42 @@
         <span class="logo-type"><strong>ZOND</strong><small>LABS</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Основное меню">
-        <a class="nav-active" href="#top">Главная</a>
-        <a href="#xdot">Продукты</a>
-        <a href="#directions">Магазин</a>
+        <a class="nav-active" href="#top" aria-current="page">Главная</a>
+        <a href="#xdot">xDot</a>
         <a href="#technology">Технологии</a>
-        <a href="#contacts">Поддержка</a>
+        <a href="#directions">Направления</a>
+        <a href="#mission">О компании</a>
       </nav>
       <div class="header-actions">
-        <a class="icon-action" href="#xdot" aria-label="Посмотреть продукт"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.8"/><path d="m16 16 5 5"/></svg></a>
-        <a class="icon-action" href="#contacts" aria-label="Связь с ZOND Labs"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M4.5 21v-2.5a7.5 7.5 0 0 1 15 0V21"/></svg></a>
-        <a class="header-button" href="#xdot">xDot <span aria-hidden="true">↗</span></a>
+        <button class="icon-action" type="button" id="searchOpen" aria-label="Поиск по сайту" aria-haspopup="dialog" aria-controls="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <a class="header-button" href="#xdot">Узнать о xDot <span aria-hidden="true">↗</span></a>
         <button class="mobile-menu-button" id="menuButton" type="button" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false"><i></i><i></i></button>
       </div>
     </div>
     <nav class="mobile-nav" id="mobileMenu" aria-label="Меню для мобильных устройств" inert>
-      <a href="#top">Главная</a><a href="#xdot">Продукты</a><a href="#directions">Магазин</a><a href="#technology">Технологии</a><a href="#contacts">Поддержка</a>
+      <a href="#top">Главная</a><a href="#xdot">xDot</a><a href="#technology">Технологии</a><a href="#directions">Направления</a><a href="#mission">О компании</a><button type="button" class="mobile-search" id="mobileSearch">Поиск по сайту ↗</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-art" aria-hidden="true"><img src="/assets/hero.webp" alt="" width="964" height="658" fetchpriority="high" /></div>
+    <section class="hero" id="hero" aria-labelledby="heroTitle" aria-roledescription="слайдер" aria-label="Презентация ZOND Labs">
+      <div class="hero-art" aria-hidden="true"><img src="/assets/hero.webp" alt="" width="886" height="776" fetchpriority="high" decoding="async" /></div>
       <div class="hero-glass" aria-hidden="true"></div>
       <div class="container hero-layout">
         <div class="hero-content">
-          <div class="overline overline-light">ZOND LABS <span class="overline-line"></span> СОБСТВЕННЫЕ ТЕХНОЛОГИИ</div>
+          <div class="overline overline-light">ZOND LABS <span class="overline-line"></span> <span id="heroEyebrow">СОБСТВЕННЫЕ ТЕХНОЛОГИИ</span></div>
           <h1 id="heroTitle">Технологии<br>в реальном<br><span>мире</span></h1>
-          <p>Мы создаём электронные устройства, которые делают жизнь удобнее, умнее и технологичнее.</p>
+          <p id="heroDescription">Мы создаём электронные устройства, которые делают жизнь удобнее, умнее и технологичнее.</p>
           <div class="hero-buttons">
             <a class="button button-white" href="#xdot">Смотреть продукты <span class="arrow-disc">↗</span></a>
             <a class="button-link" href="#mission">О компании <span>↗</span></a>
           </div>
         </div>
-        <div class="hero-side-index" aria-label="Первый слайд из трёх"><strong>xDot</strong><span class="dot-value" data-dots="01" data-variant="small"></span><span class="side-line"></span><span>ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА</span></div>
+        <div class="hero-side-index" aria-label="Текущий слайд"><strong>xDot</strong><span class="dot-value" data-dots="01" data-variant="small"></span><span class="side-line"></span><span id="heroSideText">ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА</span></div>
       </div>
       <div class="container hero-bottom">
-        <div class="hero-pagination" aria-label="Разделы презентации"><button type="button" class="is-selected" data-slide="0" aria-pressed="true"><span class="dot-value" data-dots="01" data-variant="tiny"></span></button><button type="button" data-slide="1" aria-pressed="false"><span class="dot-value" data-dots="02" data-variant="tiny"></span></button><button type="button" data-slide="2" aria-pressed="false"><span class="dot-value" data-dots="03" data-variant="tiny"></span></button></div>
-        <span class="hero-bottom-caption" id="heroSlideCaption">ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ</span>
+        <div class="hero-pagination" aria-label="Переключить слайд"><button type="button" class="is-selected" data-slide="0" aria-label="Слайд 1: технологии" aria-pressed="true"><span class="dot-value" data-dots="01" data-variant="tiny"></span></button><button type="button" data-slide="1" aria-label="Слайд 2: дизайн" aria-pressed="false"><span class="dot-value" data-dots="02" data-variant="tiny"></span></button><button type="button" data-slide="2" aria-label="Слайд 3: инженерия" aria-pressed="false"><span class="dot-value" data-dots="03" data-variant="tiny"></span></button></div>
+        <span class="hero-bottom-caption" id="heroSlideCaption" aria-live="polite">ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ</span>
         <a class="scroll-prompt" href="#xdot">ЛИСТАЙТЕ НИЖЕ <span>↓</span></a>
       </div>
     </section>
@@ -75,20 +79,21 @@
         </div>
         <div class="product-gallery" aria-label="Галерея устройства xDot">
           <div class="product-main-visual">
-            <img id="featureImage" src="/assets/xdevice.webp" alt="Концептуальная визуализация круглого дисплея xDot" width="788" height="744" />
-            <div class="product-image-bottom">xDot <span>КОНЦЕПТ УСТРОЙСТВА</span></div>
+            <img id="featureImage" src="/assets/xdevice.webp" alt="Концептуальная визуализация круглого дисплея xDot" width="787" height="743" decoding="async" />
+            <div class="product-image-bottom">xDot <span id="galleryCaption">КОНЦЕПТ УСТРОЙСТВА</span></div>
           </div>
           <div class="product-mini-gallery">
-            <button type="button" class="mini-image is-active" data-src="/assets/xdevice.webp" data-alt="Концептуальный дисплей xDot" aria-pressed="true" aria-label="Показать xDot"><img src="/assets/xdevice.webp" alt="" loading="lazy"></button>
-            <button type="button" class="mini-image" data-src="/assets/product.webp" data-alt="Визуальная презентация устройства и автомобильной системы" aria-pressed="false" aria-label="Показать визуализацию в интерьере"><img src="/assets/product.webp" alt="" loading="lazy"></button>
-            <button type="button" class="mini-image" data-src="/assets/case-2.webp" data-alt="Рендер фирменного футляра для xDot" aria-pressed="false" aria-label="Показать фирменный футляр"><img src="/assets/case-2.webp" alt="" loading="lazy"></button>
+            <button type="button" class="mini-image is-active" data-src="/assets/xdevice.webp" data-alt="Круглый дисплей xDot, концептуальный рендер" data-caption="КОНЦЕПТ УСТРОЙСТВА" aria-pressed="true" aria-label="Галерея: круглый дисплей" ><img src="/assets/xdevice.webp" alt="" loading="lazy" width="787" height="743"></button>
+            <button type="button" class="mini-image" data-src="/assets/case-1.webp" data-alt="Фирменный футляр xDot с открытой крышкой, вид сверху" data-caption="ФИРМЕННАЯ КОМПЛЕКТАЦИЯ" aria-pressed="false" aria-label="Галерея: футляр и комплект"><img src="/assets/case-1.webp" alt="" loading="lazy" width="1280" height="1280"></button>
+            <button type="button" class="mini-image" data-src="/assets/case-3.webp" data-alt="Детали внутренней конструкции футляра xDot" data-caption="КОНСТРУКЦИЯ И ДЕТАЛИ" aria-pressed="false" aria-label="Галерея: конструкция"><img src="/assets/case-3.webp" alt="" loading="lazy" width="1280" height="1280"></button>
+            <button type="button" class="mini-image" data-src="/assets/case-4.webp" data-alt="Концепт фирменной упаковки ZOND Labs" data-caption="КОНЦЕПТ УПАКОВКИ" aria-pressed="false" aria-label="Галерея: упаковка"><img src="/assets/case-4.webp" alt="" loading="lazy" width="1280" height="1280"></button>
           </div>
         </div>
       </div>
     </section>
 
     <section class="engineering" id="technology" aria-labelledby="engineeringTitle">
-      <div class="engineering-bg"><img src="/assets/engineering.webp" alt="" loading="eager" width="1008" height="464"></div>
+      <div class="engineering-bg"><img src="/assets/engineering.webp" alt="" loading="lazy" width="1114" height="388" decoding="async"></div>
       <div class="container engineering-layout">
         <div class="engineering-copy">
           <span class="overline overline-light">ИНЖЕНЕРИЯ ZOND LABS</span>
@@ -117,21 +122,21 @@
       <div class="container">
         <div class="directions-head">
           <div><span class="overline overline-blue">НАШИ НАПРАВЛЕНИЯ</span><h2 id="directionsTitle">Технологии<br>для <em>реальной жизни</em></h2></div>
-          <div class="directions-summary"><p>Мы фокусируемся на практических решениях, которые интегрируются в повседневную жизнь и приносят реальную пользу.</p><a href="#contacts" class="small-link">Связаться с нами <span>↗</span></a></div>
+          <div class="directions-summary"><p>Мы фокусируемся на практических решениях, которые интегрируются в повседневную жизнь и приносят реальную пользу.</p><a href="#mission" class="small-link">О компании <span>↗</span></a></div>
         </div>
         <div class="directions-cards">
-          <a class="direction-card" href="#xdot"><img src="/assets/auto.webp" alt="Дисплей xDot в автомобиле" loading="eager"><span class="direction-gradient"></span><div class="direction-info"><h3>Автоэлектроника</h3><p>Решения для вашего автомобиля</p></div><span class="direction-arrow">↗</span></a>
-          <a class="direction-card" href="#technology"><img src="/assets/smart.webp" alt="Современное электронное устройство" loading="eager"><span class="direction-gradient"></span><div class="direction-info"><h3>Умные устройства</h3><p>Технологии для повседневной жизни</p></div><span class="direction-arrow">↗</span></a>
-          <a class="direction-card" href="#xdot"><img src="/assets/accessory.webp" alt="Фирменный электронный аксессуар" loading="eager"><span class="direction-gradient"></span><div class="direction-info"><h3>Аксессуары</h3><p>Продуманные детали для экосистемы</p></div><span class="direction-arrow">↗</span></a>
-          <a class="direction-card" href="#contacts"><img src="/assets/platform.webp" alt="Интерфейс программной платформы" loading="eager"><span class="direction-gradient"></span><div class="direction-info"><h3>Платформа</h3><p>Программные решения и интеграция</p></div><span class="direction-arrow">↗</span></a>
+          <a class="direction-card" href="#xdot"><img src="/assets/auto.webp" alt="Дисплей xDot в автомобиле" width="486" height="342" loading="lazy" decoding="async"><span class="direction-gradient"></span><div class="direction-info"><h3>Автоэлектроника</h3><p>Решения для вашего автомобиля</p></div><span class="direction-arrow">↗</span></a>
+          <a class="direction-card" href="#technology"><img src="/assets/smart.webp" alt="Современное электронное устройство" width="471" height="342" loading="lazy" decoding="async"><span class="direction-gradient"></span><div class="direction-info"><h3>Умные устройства</h3><p>Технологии для повседневной жизни</p></div><span class="direction-arrow">↗</span></a>
+          <a class="direction-card" href="#xdot"><img src="/assets/accessory.webp" alt="Фирменный электронный аксессуар" width="480" height="342" loading="lazy" decoding="async"><span class="direction-gradient"></span><div class="direction-info"><h3>Аксессуары</h3><p>Продуманные детали для экосистемы</p></div><span class="direction-arrow">↗</span></a>
+          <a class="direction-card" href="#contacts"><img src="/assets/platform.webp" alt="Интерфейс программной платформы" width="507" height="342" loading="lazy" decoding="async"><span class="direction-gradient"></span><div class="direction-info"><h3>Платформа</h3><p>Программные решения и интеграция</p></div><span class="direction-arrow">↗</span></a>
         </div>
       </div>
     </section>
 
     <section class="mission" id="mission" aria-labelledby="missionTitle">
-      <img class="mission-image" src="/assets/banner.webp" alt="" loading="eager" width="1006" height="296" />
+      <img class="mission-image" src="/assets/banner.webp" alt="" loading="lazy" width="940" height="294" decoding="async" />
       <div class="container mission-layout">
-        <div><span class="overline overline-light">ZOND LABS / НАША ФИЛОСОФИЯ</span><h2 id="missionTitle">Больше,<br>чем устройства</h2><p>Мы верим, что технологии должны быть не только функциональными, но и красивыми.</p><a href="#contacts" class="button button-outline">О проекте <span>↗</span></a></div>
+        <div><span class="overline overline-light">ZOND LABS / НАША ФИЛОСОФИЯ</span><h2 id="missionTitle">Больше,<br>чем устройства</h2><p>Мы верим, что технологии должны быть не только функциональными, но и красивыми.</p><a href="#xdot" class="button button-outline">Смотреть xDot <span>↗</span></a></div>
         <span class="mission-signature">ТЕХНОЛОГИИ<br>СЕГОДНЯ<br>ДЛЯ ЛУЧШЕГО<br>ЗАВТРА</span>
       </div>
     </section>
@@ -142,8 +147,8 @@
       <div class="footer-brand"><a class="logo" href="#top" aria-label="ZOND Labs — вернуться наверх"><img src="/assets/logo-mark.png" alt="" width="46" height="46"><span class="logo-type"><strong>ZOND</strong><small>LABS</small></span></a><p>Создаём технологии<br>для реального мира.</p></div>
       <div class="footer-links"><h3>Продукты</h3><a href="#xdot">xDot</a><a href="#directions">Направления</a></div>
       <div class="footer-links"><h3>Компания</h3><a href="#mission">О нас</a><a href="#technology">Разработка</a></div>
-      <div class="footer-links"><h3>Поддержка</h3><a href="#contacts" id="contactInfo">Связаться с нами</a><a href="#xdot">О продукте</a></div>
-      <div class="footer-right"><div class="footer-social"><span>ZOND</span><span>LABS</span></div><p>© <span class="dot-value" data-dots="2026" data-variant="tiny"></span> ZOND Labs.<br>Все права защищены.</p></div>
+      <div class="footer-links"><h3>Информация</h3><a href="#xdot">О продукте</a><a href="https://github.com/absolutepc/zondlabs" target="_blank" rel="noopener noreferrer">Проект на GitHub <span aria-hidden="true">↗</span></a></div>
+      <div class="footer-right"><div class="footer-social"><span>ZOND</span><span>LABS</span></div><p class="footer-contact-note">Контакты для покупателей появятся к запуску xDot.</p><p>© <span class="dot-value" data-dots="2026" data-variant="tiny"></span> ZOND Labs.<br>Все права защищены.</p></div>
     </div>
   </footer>
 
@@ -154,6 +159,14 @@
       <div class="dialog-copy"><span class="overline overline-blue">ZOND LABS / ПЕРВЫЙ ПРОДУКТ</span><h2 id="dialogTitle">xDot</h2><p>Круглый дисплей для персонализированного оформления автомобиля. Проект объединяет собственную конструкцию корпуса, электронику и управление по Wi‑Fi.</p><p>На сайте представлены концептуальные рендеры. Конструкция и комплектация могут измениться в процессе разработки.</p><span class="dialog-status">● УСТРОЙСТВО В РАЗРАБОТКЕ</span></div>
     </div>
   </dialog>
-  <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactDialogTitle"><button class="dialog-close" id="contactClose" type="button" aria-label="Закрыть">×</button><span class="overline overline-blue">ZOND LABS</span><h2 id="contactDialogTitle">Контакты</h2><p>Контактные данные и каналы поддержки будут опубликованы к запуску продукта. Следите за обновлениями сайта.</p><button class="button button-dark" id="contactDone" type="button">Понятно <span>↗</span></button></dialog>
+  <dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
+    <button class="dialog-close" id="searchClose" type="button" aria-label="Закрыть поиск">×</button>
+    <span class="overline overline-blue">ПОИСК ПО САЙТУ</span>
+    <h2 id="searchTitle">Что вас интересует?</h2>
+    <label for="searchInput" class="search-label">Название продукта или раздел</label>
+    <input id="searchInput" type="search" placeholder="Например, xDot или технологии" autocomplete="off" />
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <p class="search-hint">Поиск охватывает разделы этого сайта, но не будущий каталог продаж.</p>
+  </dialog>
 </body>
 </html>
