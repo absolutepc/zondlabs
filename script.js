@@ -38,11 +38,11 @@ document.querySelectorAll('.mini-image').forEach(button=>button.addEventListener
  document.querySelectorAll('.mini-image').forEach(b=>{b.classList.toggle('is-active',b===button);b.setAttribute('aria-pressed',String(b===button))});
 }));
 const slides=[
- {caption:'ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ',filter:'none',title:'xDot'},
- {caption:'ПРОДУМАННАЯ КОНСТРУКЦИЯ И ЭСТЕТИКА',filter:'saturate(.76) brightness(.83)',title:'Дизайн'},
- {caption:'СОБСТВЕННЫЕ РЕШЕНИЯ ДЛЯ РЕАЛЬНОГО МИРА',filter:'saturate(1.14) contrast(1.12)',title:'Технологии'}
+ {caption:'ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ',filter:'none',title:'xDot',image:'/assets/hero.webp'},
+ {caption:'ПРОДУМАННАЯ КОНСТРУКЦИЯ И ЭСТЕТИКА',filter:'saturate(.9) brightness(.9)',title:'Дизайн',image:'/assets/product.webp'},
+ {caption:'СОБСТВЕННЫЕ РЕШЕНИЯ ДЛЯ РЕАЛЬНОГО МИРА',filter:'saturate(1.1) contrast(1.1)',title:'Инженерия',image:'/assets/engineering.webp'}
 ];
 const heroImg=document.querySelector('.hero-art img');const heroSlideCaption=document.getElementById('heroSlideCaption');
-document.querySelectorAll('[data-slide]').forEach(button=>button.addEventListener('click',()=>{const slide=Number(button.dataset.slide);document.querySelectorAll('[data-slide]').forEach(b=>{b.classList.toggle('is-selected',b===button);b.setAttribute('aria-pressed',String(b===button));});heroSlideCaption.textContent=slides[slide].caption;heroImg.style.filter=slides[slide].filter;}));
+document.querySelectorAll('[data-slide]').forEach(button=>button.addEventListener('click',()=>{const slide=Number(button.dataset.slide);document.querySelectorAll('[data-slide]').forEach(b=>{b.classList.toggle('is-selected',b===button);b.setAttribute('aria-pressed',String(b===button));});heroSlideCaption.textContent=slides[slide].caption;heroImg.style.filter=slides[slide].filter;const next=new Image();next.src=slides[slide].image;const swap=()=>{heroImg.src=slides[slide].image;};if(next.complete)swap();else next.onload=swap;document.querySelector('.hero-side-index strong').textContent=slides[slide].title;}));
 const productDialog=document.getElementById('productDialog');document.getElementById('detailsOpen').addEventListener('click',()=>productDialog.showModal());document.getElementById('dialogClose').addEventListener('click',()=>productDialog.close());productDialog.addEventListener('click',e=>{if(e.target===productDialog)productDialog.close()});
 const contactDialog=document.getElementById('contactDialog');document.getElementById('contactInfo').addEventListener('click',e=>{e.preventDefault();contactDialog.showModal()});document.getElementById('contactClose').addEventListener('click',()=>contactDialog.close());document.getElementById('contactDone').addEventListener('click',()=>contactDialog.close());contactDialog.addEventListener('click',e=>{if(e.target===contactDialog)contactDialog.close()});
