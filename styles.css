@@ -140,3 +140,18 @@ dialog{border:1px solid rgba(169,211,244,.4);border-radius:24px;color:#0e1b28;ba
  .product-mini-gallery{height:88px}
 }
 @media(max-width:360px){.product-gallery{grid-template-rows:280px 76px}.product-main-visual{height:280px}.product-mini-gallery{height:76px}}
+
+/* First slide only: use the existing BMW M5 F90 / xDot photo without modifying the approved site design. */
+.hero.hero--bmw .hero-art{inset:0}
+.hero.hero--bmw .hero-art img{object-position:center 50%;filter:none}
+.hero.hero--bmw:after{background:linear-gradient(90deg,rgba(5,11,18,.99) 0%,rgba(5,11,18,.96) 24%,rgba(5,11,18,.87) 34%,rgba(5,11,18,.3) 56%,rgba(5,11,18,.07) 82%),linear-gradient(0deg,rgba(5,10,17,.65),transparent 25%)}
+@media(max-width:820px){
+ .hero.hero--bmw .hero-art{inset:245px -40px 0 0}
+ .hero.hero--bmw .hero-art img{object-position:50% 52%}
+ .hero.hero--bmw:after{background:linear-gradient(180deg,#070e15 0%,rgba(7,14,21,.97) 29%,rgba(7,14,21,.65) 45%,rgba(7,14,21,.06) 65%,rgba(7,14,21,.75) 100%)}
+}
+@media(max-width:570px){
+ .hero.hero--bmw .hero-art{inset:320px -48px 0 -48px}
+ .hero.hero--bmw .hero-art img{object-position:50% 45%}
+ .hero.hero--bmw:after{background:linear-gradient(180deg,#070e15 0%,rgba(7,14,21,.99) 36%,rgba(7,14,21,.35) 56%,rgba(7,14,21,.1) 75%,rgba(7,14,21,.78) 100%)}
+}

@@ -148,7 +148,7 @@ const slides = [
     heading: 'Технологии<br>в реальном<br><span>мире</span>',
     description: 'Мы создаём электронные устройства, которые делают жизнь удобнее, умнее и технологичнее.',
     caption: 'ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ',
-    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/hero.webp', alt: 'xDot — круглый электронный дисплей',
+    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/bmw-m5-f90-xdot.webp', alt: 'BMW M5 F90 с установленным xDot вместо эмблемы на крышке багажника',
   },
   {
     eyebrow: 'ДИЗАЙН ZOND LABS',
@@ -185,6 +185,7 @@ function chooseSlide(index) {
   loadImage(slide.image, () => {
     if (heroRequest !== token) return;
     heroImg.src = slide.image;
+    document.getElementById('hero').classList.toggle('hero--bmw', index === 0);
     heroImg.alt = slide.alt;
     heroHeading.innerHTML = slide.heading; // authored static strings above; no user HTML
     heroDescription.textContent = slide.description;
