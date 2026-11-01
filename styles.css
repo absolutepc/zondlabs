@@ -319,3 +319,8 @@ dialog{border:1px solid rgba(169,211,244,.4);border-radius:24px;color:#0e1b28;ba
   .hero-buttons .button-link { font-size: 11px; }
   .hero-bottom-caption { letter-spacing: .1em; }
 }
+
+/* Portrait image on phones only: precise xDot framing without changing desktop hero. */
+@media (max-width: 570px) {
+  .hero.hero--bmw .hero-art img { object-position: 50% 58%; }
+}

@@ -16,7 +16,8 @@
   <title>ZOND Labs — Технологии в реальном мире</title>
   <link rel="icon" href="/assets/favicon-v2.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="preload" href="/assets/bmw-m5-f90-xdot-v2.webp" as="image" fetchpriority="high" />
+  <link rel="preload" href="/assets/bmw-m5-f90-xdot-v2.webp" as="image" media="(min-width: 571px)" fetchpriority="high" />
+  <link rel="preload" href="/assets/bmw-m5-f90-xdot-portrait.webp" as="image" media="(max-width: 570px)" fetchpriority="high" />
   <link rel="stylesheet" href="/styles.css" />
   <script defer src="/script.js"></script>
 </head>
@@ -47,7 +48,7 @@
 
   <main>
     <section class="hero hero--bmw" id="hero" aria-labelledby="heroTitle" aria-roledescription="слайдер" aria-label="Презентация ZOND Labs">
-      <div class="hero-art" aria-hidden="true"><img src="/assets/bmw-m5-f90-xdot-v2.webp" alt="" width="1670" height="942" fetchpriority="high" decoding="async" /></div>
+      <div class="hero-art" aria-hidden="true"><picture><source media="(max-width: 570px)" srcset="/assets/bmw-m5-f90-xdot-portrait.webp" /><img src="/assets/bmw-m5-f90-xdot-v2.webp" alt="" width="1670" height="942" fetchpriority="high" decoding="async" /></picture></div>
       <div class="hero-glass" aria-hidden="true"></div>
       <div class="container hero-layout">
         <div class="hero-content">

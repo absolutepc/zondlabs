@@ -148,7 +148,7 @@ const slides = [
     heading: 'Технологии<br>в реальном<br><span>мире</span>',
     description: 'Мы создаём электронные устройства, которые делают жизнь удобнее, умнее и технологичнее.',
     caption: 'ЭЛЕКТРОНИКА / ДИЗАЙН / ИНЖЕНЕРИЯ',
-    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/bmw-m5-f90-xdot-v2.webp', alt: 'BMW M5 F90 с установленным xDot вместо эмблемы на крышке багажника',
+    title: 'xDot', side: 'ПРЕМИАЛЬНАЯ<br>ЭЛЕКТРОНИКА', image: '/assets/bmw-m5-f90-xdot-v2.webp', mobileImage: '/assets/bmw-m5-f90-xdot-portrait.webp', alt: 'BMW M5 F90 с установленным xDot вместо эмблемы на крышке багажника',
   },
   {
     eyebrow: 'ДИЗАЙН ZOND LABS',
@@ -166,6 +166,7 @@ const slides = [
   }
 ];
 const heroImg = document.querySelector('.hero-art img');
+const heroMobileSource = document.querySelector('.hero-art source');
 const heroHeading = document.getElementById('heroTitle');
 const heroDescription = document.getElementById('heroDescription');
 const heroEyebrow = document.getElementById('heroEyebrow');
@@ -182,8 +183,10 @@ function chooseSlide(index) {
   if (!slide) return;
   const token = ++heroRequest;
   heroImg.classList.add('is-changing');
-  loadImage(slide.image, () => {
+  const targetImage = window.matchMedia('(max-width: 570px)').matches ? (slide.mobileImage || slide.image) : slide.image;
+  loadImage(targetImage, () => {
     if (heroRequest !== token) return;
+    heroMobileSource.srcset = slide.mobileImage || slide.image;
     heroImg.src = slide.image;
     document.getElementById('hero').classList.toggle('hero--bmw', index === 0);
     heroImg.alt = slide.alt;
