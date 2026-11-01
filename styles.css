@@ -371,3 +371,25 @@ dialog{border:1px solid rgba(169,211,244,.4);border-radius:24px;color:#0e1b28;ba
   }
   .hero.hero--bmw::after { background: none; }
 }
+
+/* Compact mobile slides: remove redundant labels and recover their space. */
+@media (max-width: 570px) {
+  .hero .overline,
+  .hero .hero-bottom-caption { display: none; }
+  .hero .hero-content { padding-top: 25px; }
+  .hero h1 {
+    margin: 0 0 15px;
+    font-size: clamp(42px, 11.5vw, 52px);
+    line-height: 1.01;
+  }
+  .hero .hero-buttons { margin: clamp(300px, 78vw, 350px) 0 10px; }
+  .hero .hero-bottom {
+    gap: 0;
+    padding-bottom: 12px;
+  }
+  .hero .hero-pagination button { min-height: 42px; }
+  .hero.hero--bmw .hero-art img { object-position: center 50%; }
+}
+@media (max-width: 360px) {
+  .hero .hero-buttons { margin-top: 300px; }
+}
