@@ -162,3 +162,160 @@ dialog{border:1px solid rgba(169,211,244,.4);border-radius:24px;color:#0e1b28;ba
 .logo-type strong{font-size:19px;font-weight:770;letter-spacing:.095em;white-space:nowrap}
 @media (min-width:821px) and (max-width:1100px){.logo-type strong{font-size:16px;letter-spacing:.075em}.header-inner{gap:14px}.desktop-nav{gap:14px}}
 @media (max-width:570px){.logo-type strong{font-size:17px;letter-spacing:.075em}}
+/* ZONDLABS mobile hero — approved image-first presentation.
+   Scoped to phones: desktop hero and all sections below remain unchanged. */
+@media (max-width: 570px) {
+  .header-actions > .icon-action {
+    display: inline-flex;
+    width: 38px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .site-header .header-inner { gap: 8px; }
+  .hero {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .hero-layout {
+    display: block;
+    min-height: 0;
+  }
+  .hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 36px 0 0;
+  }
+  .hero .overline {
+    font-size: 8px;
+    letter-spacing: .16em;
+    gap: 9px;
+    line-height: 1.55;
+    white-space: nowrap;
+  }
+  .hero .overline-line { width: 20px; flex: none; }
+  .hero h1 {
+    margin: 24px 0 21px;
+    font-size: clamp(43px, 11.9vw, 58px);
+    line-height: 1.01;
+    letter-spacing: -.06em;
+  }
+  .hero-content > p {
+    max-width: 350px;
+    margin: 0;
+    color: #d5e0eb;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  /* The photograph is a separate visual beat between the introduction and actions. */
+  .hero-art,
+  .hero.hero--bmw .hero-art {
+    top: 305px;
+    right: -8%;
+    bottom: auto;
+    left: -8%;
+    height: 350px;
+    inset-block-start: 305px;
+    z-index: 6;
+  }
+  .hero-art::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      #070e15 0%, rgba(7,14,21,.12) 22%,
+      transparent 47%, rgba(7,14,21,.08) 79%,
+      #070e15 100%);
+  }
+  .hero-art img,
+  .hero.hero--bmw .hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% 51%;
+  }
+  .hero:after { z-index: 3; }
+  .hero .hero-glass { z-index: 3; }
+  .hero .hero-layout, .hero .hero-bottom { z-index: 7; }
+  .hero.hero--bmw:after {
+    background: linear-gradient(180deg,
+      #070e15 0%, rgba(7,14,21,.98) 31%,
+      rgba(7,14,21,.42) 42%,
+      rgba(7,14,21,.02) 58%,
+      rgba(7,14,21,.16) 76%,
+      #070e15 86%);
+  }
+  .hero:not(.hero--bmw):after {
+    background: linear-gradient(180deg,
+      #070e15 0%, rgba(7,14,21,.97) 29%,
+      rgba(7,14,21,.32) 48%,
+      rgba(7,14,21,.2) 71%,
+      #070e15 89%);
+  }
+  .hero .hero-buttons {
+    position: relative;
+    margin: clamp(386px, 100vw, 420px) 0 22px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+  }
+  .hero-buttons .button {
+    min-height: 49px;
+    padding: 0 14px;
+    font-size: 12px;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .hero-buttons .button-link {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .hero-side-index { display: none; }
+  .hero-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    height: auto;
+    padding: 0 0 31px;
+    border-top: 0;
+  }
+  .hero-pagination {
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+  }
+  .hero-pagination button {
+    min-width: 60px;
+    min-height: 46px;
+    padding: 7px 2px;
+    justify-content: center;
+    gap: 9px;
+  }
+  .hero-pagination button:after { width: 29px; }
+  .hero-bottom-caption {
+    display: block;
+    max-width: 100%;
+    font-size: 8px;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: .15em;
+  }
+  .scroll-prompt { display: none; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 42px; }
+  .hero-art,
+  .hero.hero--bmw .hero-art { top: 300px; height: 328px; }
+  .hero .hero-buttons { margin-top: 386px; gap: 8px; }
+  .hero-buttons .button { padding-inline: 11px; font-size: 11px; }
+  .hero-buttons .button-link { font-size: 11px; }
+  .hero-bottom-caption { letter-spacing: .1em; }
+}
