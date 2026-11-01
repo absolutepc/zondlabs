@@ -155,3 +155,10 @@ dialog{border:1px solid rgba(169,211,244,.4);border-radius:24px;color:#0e1b28;ba
  .hero.hero--bmw .hero-art img{object-position:50% 45%}
  .hero.hero--bmw:after{background:linear-gradient(180deg,#070e15 0%,rgba(7,14,21,.99) 36%,rgba(7,14,21,.35) 56%,rgba(7,14,21,.1) 75%,rgba(7,14,21,.78) 100%)}
 }
+
+/* Approved ZONDLABS identity: original four-petal emblem and single-line wordmark. */
+.logo{gap:9px}
+.logo-type{display:block;line-height:1}
+.logo-type strong{font-size:19px;font-weight:770;letter-spacing:.095em;white-space:nowrap}
+@media (min-width:821px) and (max-width:1100px){.logo-type strong{font-size:16px;letter-spacing:.075em}.header-inner{gap:14px}.desktop-nav{gap:14px}}
+@media (max-width:570px){.logo-type strong{font-size:17px;letter-spacing:.075em}}
